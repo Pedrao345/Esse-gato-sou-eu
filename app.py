@@ -1,11 +1,11 @@
 from flask import Flask, request, render_template
-
 import requests
+
 app = Flask(__name__)
 
 API_ENDPOINT = 'https://api.thecatapi.com/v1/images/search'
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/', methods=['GET','POST'])
 def index():
     if request.method == 'GET':
         return render_template('index.html')
@@ -27,3 +27,4 @@ def index():
 
 if __name__ == '__main__':
     app.run(debug=True)
+    
